@@ -18,3 +18,9 @@ Ketika sebuah property atau method dinyatakan sebagai *protected*, maka property
 ### private
 
 Ketika sebuah property atau method di-set sebagai *private*, maka satu-satunya yang bisa mengakses adalah class itu sendiri. Class lain tidak bisa mengaksesnya, termasuk class turunan.
+
+### Constructor
+
+Constructor adalah fungsi khusus dalam sebuah class yang dipanggil saat sebuah object dibuat. Constructor tidak memiliki return value. Constructor biasa digunakan untuk mempersiapkan object seperti memberi nilai awal kepada atribute, memanggil member function dan beberapa proses lain.
+
+Pada PHP, constructor dibuat dengan menggunakan nama fungsi:  __construct().
