@@ -12,14 +12,14 @@ class Mobil
     public $warna = " Hitam "; 
     
     //method construct
-    public function __construct ()
+    public function __construct()
     {
         // menampilkan pesan/ perintah merek mobil ini bermerek ...
         echo "Merek Mobil ini adalah " . __CLASS__ ;
       
     }
     // method destruct
-    public function __destruct ()
+    public function __destruct()
     {
         echo " <br> Warna " . __CLASS__ . " kurang bagus ";
     }
