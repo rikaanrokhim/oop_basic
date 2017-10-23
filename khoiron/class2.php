@@ -2,22 +2,27 @@
 
 class Komputer
 {
+    public $user;
+    protected $merk = "MSI";
+    private $tempat = "Warnet";
     const waktu = 3;
 
-    public function __construct()
+    public function __construct($user)
     {
-        echo "Menekan tombol power\n";
+        $this->user = $user;
+        echo $user." menekan tombol power komputer ".$this->merk;
     }
 
     public function nyala()
     {
-        echo "Sedang menyalakan Komputer...\n";
-        echo "Komputer dinyalakan dalam waktu ".self::waktu." detik\n";
+
+        echo "\nSedang menyalakan Komputer ".$this->tempat."...";
+        echo "\nKomputer dinyalakan dalam waktu ".self::waktu." detik\n";
     }
 
     public function mati()
     {
-        return "Mematikan Komputer...\n";
+        return $this->user." mematikan Komputer...\n";
     }
 
     public function __destruct()
@@ -27,6 +32,7 @@ class Komputer
 
 }
 
-$msi = new Komputer();
+echo "Masukkan nama anda : ";
+$msi = new Komputer(trim(fgets(STDIN)));
 echo $msi->nyala();
 echo $msi->mati();
