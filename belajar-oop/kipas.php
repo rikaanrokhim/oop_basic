@@ -10,13 +10,13 @@ class Kipas
     public $warna = " Putih "; 
     
     // method constructor
-    public function __construct ()
+    public function __construct()
     {
         // code yang akan dijalankan
         echo "Merek Kipas adalah " . __CLASS__ ;
     }
     // method destructor
-    public function __destruct ()
+    public function __destruct()
     {
         echo " <br> Harga ". __CLASS__ . " terlalu mahal";
     }
