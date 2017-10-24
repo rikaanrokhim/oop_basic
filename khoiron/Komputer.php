@@ -15,7 +15,6 @@ class Komputer
 
     public function nyala()
     {
-
         echo "\nSedang menyalakan Komputer ".$this->tempat."...";
         echo "\nKomputer dinyalakan dalam waktu ".self::WAKTU." detik\n";
     }
