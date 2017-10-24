@@ -80,7 +80,6 @@ class Komputer
   
 class Laptop extends Komputer
 {
-  
    public function getProcessor() 
    {
      return $this->jenisProcessor;
