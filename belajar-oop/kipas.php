@@ -21,19 +21,19 @@ class Kipas
         echo " <br> Harga ". __CLASS__ . " terlalu mahal";
     }
     // method merek
-    public function get_merek()
+    public function getMrek()
     {
         // mengambil value dari $merek 
         return $this->merek;
     }
     //method harga
-    public function get_harga()
+    public function getHarga()
     {
         // mengambil value dari $harga
         return $this->harga;
     }
     //method warna
-    public function get_warna()
+    public function getWarna()
     {
         // mengambil value dari $warna
         return $this->warna;
@@ -46,6 +46,6 @@ $Kipas1 = new Kipas();
 // unset($Kipas1);
 
 // menampilkan property
-echo   $Kipas1->get_merek() . "<br>";
-echo   "Harganya Rp. " .$Kipas1->get_harga() . "<br>";
-echo  "Warna ". $Kipas1->get_warna();
+echo   $Kipas1->getMerek() . "<br>";
+echo   "Harganya Rp. " .$Kipas1->getHarga() . "<br>";
+echo  "Warna ". $Kipas1->getWarna();
