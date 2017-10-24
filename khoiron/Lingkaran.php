@@ -1,10 +1,9 @@
 <?php
 class Lingkaran
 {
-
-    private $jari;
-    protected $pernyataan;
     const PHI = 3.14;
+    protected $pernyataan;
+    private $jari;
 
     public function __construct($jari)
     {

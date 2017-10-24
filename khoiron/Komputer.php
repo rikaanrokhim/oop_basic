@@ -2,10 +2,10 @@
 
 class Komputer
 {
+    const WAKTU = 3;
     public $user;
     protected $merk = "MSI";
     private $tempat = "Warnet";
-    const WAKTU = 3;
 
     public function __construct($user)
     {
