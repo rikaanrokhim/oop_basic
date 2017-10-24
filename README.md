@@ -50,7 +50,7 @@ class Komputer
 
 class Laptop extends Komputer
 {
-   public function tampilkanProcessor() 
+   public function getProcessor() 
    {
      return $this->jenisProcessor;
    }
@@ -60,7 +60,7 @@ class Laptop extends Komputer
 $laptopBaru = new Laptop();
   
 // jalankan method
-echo $laptopBaru->tampilkanProcessor(); 
+echo $laptopBaru->getProcessor(); 
 // "Intel Core i5 7200U"
 ```
 
@@ -71,7 +71,7 @@ Ketika sebuah property atau method di-set sebagai *private*, maka satu-satunya y
 class Komputer {
    private $jenisProcessor = "Intel Core i5 7200U";
    
-   public function tampilkanProcessor() 
+   public function getProcessor() 
    {
      return $this->jenisProcessor;
    }
@@ -79,7 +79,7 @@ class Komputer {
   
 class Laptop extends Komputer{
   
-   public function tampilkanProcessor() 
+   public function getProcessor() 
    {
      return $this->jenisProcessor;
    }
@@ -90,11 +90,11 @@ $komputerBaru = new Komputer();
 $laptopBaru = new Laptop();
   
 // jalankan method dari class Komputer
-echo $komputerBaru->tampilkanProcessor(); 
+echo $komputerBaru->getProcessor(); 
 // "Intel Core i5 7200U"
   
 // jalankan method dari class Laptop (error)
-echo $laptopBaru->tampilkanProcessor();
+echo $laptopBaru->getProcessor();
 // Notice: Undefined property: Laptop::$jenisProcessor
 ```
 
