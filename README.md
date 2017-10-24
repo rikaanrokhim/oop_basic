@@ -310,8 +310,8 @@ class Friends extends User
 
 $profil = new Friends;
 
-echo "Username = " . $profil -> getUsername();
-echo "Temannya = " . $profil -> getName();
+echo "Username = " . $profil->getUsername();
+echo "Temannya = " . $profil->getName();
 ```
 Hasilnya : <br>
 Username = Agnes <br>
@@ -333,7 +333,6 @@ Static property dan static method adalah property dan method yang langsung dapat
 
 Static property dan static method juga menerima visibility keyword seperti __public, protected atau private__ namun jika visibility keyword tidak dideklarasikan maka otomatis dideklarasikan sebagai public.
 
-Untuk mengakses static property dan static method tidak menggunakan keyword $this tapi menggunakan keyword `self`
 
 * Contoh penggunaan :
 
