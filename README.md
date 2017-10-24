@@ -68,7 +68,8 @@ echo $laptopBaru->getProcessor();
 
 Ketika sebuah property atau method di-set sebagai *private*, maka satu-satunya yang bisa mengakses adalah class itu sendiri. Class lain tidak bisa mengaksesnya, termasuk class turunan.
 ```PHP
-class Komputer {
+class Komputer 
+{
    private $jenisProcessor = "Intel Core i5 7200U";
    
    public function getProcessor() 
@@ -77,8 +78,8 @@ class Komputer {
    }
 }
   
-class Laptop extends Komputer{
-  
+class Laptop extends Komputer
+{
    public function getProcessor() 
    {
      return $this->jenisProcessor;
