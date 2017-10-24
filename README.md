@@ -196,9 +196,10 @@ echo $classname::JUMLAH_RODA;
 Ada tiga keyword khusus yang bisa dipakai dalam menggunakan operator :: didalam class, yaitu : **static, parent dan self.**
 * Contoh penggunaan :
 ```php 
-class Motor {  
+class Motor 
+{  
     const JUMLAH_RODA = ' 2';  
- }  
+}  
 
 /*
 * membuat class honda turunan dari Motor
