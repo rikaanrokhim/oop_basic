@@ -103,36 +103,21 @@ Konstanta Class atau class constant adalah konstanta yang berada di dalam class.
 Class constant juga terikat kepada class, bukan objek. Oleh karena itu, untuk mengakses nilai konstanta, kita menggunakan operator yang sama seperti static property, yakni menggunakan double colon "::".
 Penulisan :
 ```PHP
-class Komputer 
+class Laptop
 {
-   const DOLLAR = '11000';
-}
- 
-class Laptop extends Komputer 
-{
-   const DOLLAR = '12000';
+    const DOLLAR = 13000;
   
-   // buat method dengan konstanta class Komputer
-   public function beliKomputer($harga)
-   {
-     return "Beli Komputer Baru, Rp .".$harga*parent::DOLLAR;
-   }
-  
-   // buat method dengan konstanta class Laptop
-   public function beliLaptop($harga)
-   {
-     return "Beli Komputer Baru, Rp .".$harga*self::DOLLAR;
-   }
+    // buat method dengan konstanta class Laptop
+    public function beliLaptop($harga)
+    {
+      return "Beli Laptop Baru, Rp .".$harga * self::DOLLAR;
+    }
 }
   
 // buat objek dari class Laptop
 $laptopBaru = new Laptop();
 
-echo $laptopBaru::DOLLAR;//keluaran : 12000
-echo "<br>";
 echo $laptopBaru->beliLaptop(400);
-echo "<br>";
-echo $laptopBaru->beliKomputer(400);
 ```
 
 # Constructor & Destructor
@@ -143,7 +128,8 @@ Constructor adalah fungsi khusus dalam sebuah class yang dipanggil saat sebuah o
 Pada PHP, constructor dibuat dengan menggunakan nama fungsi:  `__construct()`
 #### Sintax
 ```php
-public function __construct() {
+public function __construct()
+{
     // Code yang akan dijalankan
 }
 ```
