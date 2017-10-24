@@ -32,7 +32,7 @@ class Mobil
     public function getJumlahRoda()
     {
         // mengambil value dari $jumlahRoda
-        return  self::jumlahRoda;
+        return  self::JUMLAH_RODA;
     }
     public function getHarga()
     {
