@@ -121,3 +121,11 @@ Destructor adalah method khusus yang dijalankan secara otomatis pada saat sebuah
 Destructor biasanya digunakan untuk membersihkan beberapa variabel, atau menjalankan proses tertentu sebelum objek dihapus.
 
 Pada PHP, destructor dibuat dengan menggunakan nama fungsi: `__destructor()`
+
+```php
+public function __destruct() 
+{
+    echo "Kode sudah dihancurkan!";
+}
+```
+
