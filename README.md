@@ -323,7 +323,7 @@ Pada contoh diatas class `User` sebagai induknya dan class `Friends` sebagai tur
 # Static Keyword
  
 - Method atau property dapat dideklarasikan secara static.
-- Jika method atau property dideklarasikan secara static maka method atau property tersebut lamgsung dapat dikases tanpa harus membuat di-instance class.
+- Jika method atau property dideklarasikan secara static maka method atau property tersebut langsung dapat dikases tanpa harus membuat di-instance class.
 - Method atau property static adalah milik class bukan milik instance class.
 - Keyword `$this` tidak dapat digunakan untuk meng-akses method atau property static dalam class.
 - Gunakan keyword `self` untuk mengakses method atau property static.
