@@ -318,7 +318,7 @@ Hasilnya : <br>
 Username = Agnes <br>
 Temannya = Yuka
 
-Pada contoh diatas class `User` sebagai induknya dan class `Friends` sebagai turunannya, dimana `Friends` dapat mengakses isi dari `User` namun `User` tidak dapat mengakses isi dari `Friends`.
+Pada contoh diatas class `User` sebagai induknya dan class `Friends` sebagai turunaynnya, dimana `Friends` dapat mengakses isi dari `User` namun `User` tidak dapat mengakses isi dari `Friends`.
 
 # Static Keyword
  
@@ -330,37 +330,38 @@ Pada contoh diatas class `User` sebagai induknya dan class `Friends` sebagai tur
 - Gunakan `self::method()` untuk mengakses method static dalam class.
 - Gunakan `name_class::method()` untuk mengkases method static dari luar class.
 
+Static property dan static method adalah property dan method yang langsung dapat diakses dari class tanpa instansiasi class (pembuatan object) terlebih dahulu. Cara mendeklarasikannya yaitu property atau method diawali menggunakan keyword `static`
+
+Static property dan static method juga menerima visibility keyword seperti __public, protected atau private__ namun jika visibility keyword tidak dideklarasikan maka otomatis dideklarasikan sebagai public.
+
+Untuk mengakses static property dan static method tidak menggunakan keyword $this tapi menggunakan keyword `self`
+
 * Contoh penggunaan :
 
 ```php
-// Static property
-class Mobil
+class Laptop 
 {
-    static $staticProp = "Ini adalah property static";
-    static $staticProp1 = "Ini juga adalah contoh property static";
-}
+    public static $harga;
+    public static $laba;
 
-echo Mobil::$staticProp."<br />";
-echo Mobil::$staticProp1."<br />";
-
-// Static Method
-class Mobil1 
-{
-    const JUMLAH_RODA = "Mobil memiliki roda 4";
-   
-    static function cetak()
+    public static function beli()
     {
-        echo self::JUMLAH_RODA;
+        return "Thoshiba";
+    }
+
+    public static function jual()
+    {
+        return "Laba :".self::$laba." - Nama Laptop ".self::beli();
     }
 }
 
-class Turunan extends Mobil1 
-{
-    public function __construct()
-    {
-        Mobil1::cetak();
-    }    
-}
 
-$a = new Turunan;
+laptop::$harga = 5500000;
+laptop::$laba= 200000;
+
+echo "Harga Jual: Rp".laptop::$harga;
+echo "<br>";
+echo laptop::beli();
+echo "<br>";
+echo laptop::jual();
 ```
