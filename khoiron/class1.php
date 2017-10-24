@@ -4,7 +4,7 @@ class Lingkaran
 
     private $jari;
     protected $pernyataan;
-    const phi = 3.14;
+    const PHI = 3.14;
 
     public function __construct($jari)
     {
@@ -13,13 +13,13 @@ class Lingkaran
 
     public function keliling()
     {
-        $keliling = 2*self::phi*$this->jari;
+        $keliling = 2*self::PHI*$this->jari;
         return "Lingkaran ini mempunyai keliling ".$keliling." cm\n";
     }
 
     public function luas()
     {
-        $luas = self::phi*$this->jari*$this->jari;
+        $luas = self::PHI*$this->jari*$this->jari;
         return "Lingkaran ini mempunyai luas ".$luas." cm\n";
     }
 
