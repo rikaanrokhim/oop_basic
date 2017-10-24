@@ -12,13 +12,13 @@ class Lingkaran
 
     public function keliling()
     {
-        $keliling = 2*self::PHI*$this->jari;
+        $keliling = 2 * self::PHI * $this->jari;
         return "Lingkaran ini mempunyai keliling ".$keliling." cm\n";
     }
 
     public function luas()
     {
-        $luas = self::PHI*$this->jari*$this->jari;
+        $luas = self::PHI * $this->jari * $this->jari;
         return "Lingkaran ini mempunyai luas ".$luas." cm\n";
     }
 
