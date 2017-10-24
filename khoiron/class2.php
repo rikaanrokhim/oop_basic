@@ -5,7 +5,7 @@ class Komputer
     public $user;
     protected $merk = "MSI";
     private $tempat = "Warnet";
-    const waktu = 3;
+    const WAKTU = 3;
 
     public function __construct($user)
     {
@@ -17,7 +17,7 @@ class Komputer
     {
 
         echo "\nSedang menyalakan Komputer ".$this->tempat."...";
-        echo "\nKomputer dinyalakan dalam waktu ".self::waktu." detik\n";
+        echo "\nKomputer dinyalakan dalam waktu ".self::WAKTU." detik\n";
     }
 
     public function mati()
