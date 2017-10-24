@@ -68,7 +68,8 @@ echo $laptopBaru->getProcessor();
 
 Ketika sebuah property atau method di-set sebagai *private*, maka satu-satunya yang bisa mengakses adalah class itu sendiri. Class lain tidak bisa mengaksesnya, termasuk class turunan.
 ```PHP
-class Komputer {
+class Komputer 
+{
    private $jenisProcessor = "Intel Core i5 7200U";
    
    public function getProcessor() 
@@ -77,8 +78,8 @@ class Komputer {
    }
 }
   
-class Laptop extends Komputer{
-  
+class Laptop extends Komputer
+{
    public function getProcessor() 
    {
      return $this->jenisProcessor;
@@ -196,9 +197,10 @@ echo $classname::JUMLAH_RODA;
 Ada tiga keyword khusus yang bisa dipakai dalam menggunakan operator :: didalam class, yaitu : **static, parent dan self.**
 * Contoh penggunaan :
 ```php 
-class Motor {  
+class Motor 
+{  
     const JUMLAH_RODA = ' 2';  
- }  
+}  
 
 /*
 * membuat class honda turunan dari Motor
@@ -316,7 +318,7 @@ Hasilnya : <br>
 Username = Agnes <br>
 Temannya = Yuka
 
-Pada contoh diatas class `User` sebagai induknya dan class `Friends` sebagai turunaynnya, dimana `Friends` dapat mengakses isi dari `User` namun `User` tidak dapat mengakses isi dari `Friends`.
+Pada contoh diatas class `User` sebagai induknya dan class `Friends` sebagai turunannya, dimana `Friends` dapat mengakses isi dari `User` namun `User` tidak dapat mengakses isi dari `Friends`.
 
 # Static Keyword
  
@@ -332,7 +334,8 @@ Pada contoh diatas class `User` sebagai induknya dan class `Friends` sebagai tur
 
 ```php
 // Static property
-class Mobil {
+class Mobil
+{
     static $staticProp = "Ini adalah property static";
     static $staticProp1 = "Ini juga adalah contoh property static";
 }
@@ -341,16 +344,20 @@ echo Mobil::$staticProp."<br />";
 echo Mobil::$staticProp1."<br />";
 
 // Static Method
-class Mobil1 {
+class Mobil1 
+{
     const JUMLAH_RODA = "Mobil memiliki roda 4";
    
-    static function cetak(){
+    static function cetak()
+    {
         echo self::JUMLAH_RODA;
     }
 }
 
-class Turunan extends Mobil1 {
-    public function __construct(){
+class Turunan extends Mobil1 
+{
+    public function __construct()
+    {
         Mobil1::cetak();
     }    
 }
