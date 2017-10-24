@@ -9,43 +9,65 @@ class Kipas
     public $harga = " 200.000 "; 
     public $warna = " Putih "; 
     
-    // method constructor
+    /* 
+    * method constructor
+    */
     public function __construct()
     {
-        // code yang akan dijalankan
+        /* 
+        * code yang akan dijalankan
+        */
         echo "Merek Kipas adalah " . __CLASS__ ;
     }
-    // method destructor
+    /*
+    * method destructor
+    */
     public function __destruct()
     {
         echo " <br> Harga ". __CLASS__ . " terlalu mahal";
     }
-    // method merek
+    /*
+    * method merek
+    */
     public function getMrek()
     {
-        // mengambil value dari $merek 
+        /* 
+        * mengambil value dari $merek 
+        */
         return $this->merek;
     }
-    //method harga
+    /*
+    * method harga
+    */
     public function getHarga()
     {
-        // mengambil value dari $harga
+        /*
+        * mengambil value dari $harga
+        */
         return $this->harga;
     }
-    //method warna
+    /*
+    * method warna
+    */
     public function getWarna()
     {
-        // mengambil value dari $warna
+        /*
+        * mengambil value dari $warna
+        */
         return $this->warna;
     }
 }
 
-// membuat object kipas
+/* 
+* membuat object kipas
+*/
 $Kipas1 = new Kipas();
 
 // unset($Kipas1);
 
-// menampilkan property
+/*
+* menampilkan property
+*/
 echo   $Kipas1->getMerek() . "<br>";
 echo   "Harganya Rp. " .$Kipas1->getHarga() . "<br>";
 echo  "Warna ". $Kipas1->getWarna();
