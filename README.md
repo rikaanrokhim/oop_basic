@@ -287,7 +287,6 @@ Tidak semua property dan method dari class induk akan diturunkan. Property dan m
 #### Contoh Penggunaan
 
 ```php
-<?php
 class User
 {
     public $username = 'Agnes';
