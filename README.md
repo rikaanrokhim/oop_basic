@@ -110,7 +110,7 @@ class Laptop
     // buat method dengan konstanta class Laptop
     public function beliLaptop($harga)
     {
-      return "Beli Laptop Baru, Rp .".$harga * self::DOLLAR;
+      return "Beli Laptop Baru, Rp. " . $harga * self::DOLLAR;
     }
 }
   
@@ -169,3 +169,28 @@ public function __destruct()
 }
 ```
 
+# Scope Resolution Operator
+
+Scope Resolution Operator atau bisa juga disebut *Paamayim Nekudotayim* atau *double colon* dalam OOP pada PHP biasa digunakan untuk mengakses property dan method pada suatu class tanpa harus instansiasi class yang ingin digunakan. Operator ini membuat kita diijinkan untuk mengakses static, konstanta, properti dan method pada sebuah class.
+- kode dibawah merupakan contoh penulusan Scope Resolution Operator didalam maupun diluar class
+```PHP
+class Lingkaran
+{
+    const PHI = 3.14;
+    
+    public function getPHI()
+    {
+        echo "Phi adalah " . self::PHI 
+    }
+}
+
+class Tabung extends Lingkaran
+{   
+    public function getPHI()
+    {
+        echo "Phi adalah " . parent::PHI 
+    }
+}
+
+echo "Phi adalah " . Lingkaran::PHI 
+```
