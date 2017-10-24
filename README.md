@@ -1,3 +1,30 @@
+# Property
+Property (atau disebut juga dengan atribut) adalah data yang terdapat dalam sebuah class. property ini sebenarnya hanyalah variabel yang terletak di dalam class. Seluruh aturan dan tipe data yang biasa diinput kedalam variabel, bisa juga diinput kedalam property.
+```PHP
+class Keyboard
+{
+    public $merk;
+    protected $harga;
+    private $switch;
+}
+```
+
+# Method
+Method adalah aksi yang bisa dilakukan didalam class. Method merupakan function yang berada dalam class.
+```PHP
+class Lampu
+{
+    public function nyala()
+    {
+        //isi
+    }
+    public function mati()
+    {
+        //isi
+    }
+}
+```
+
 # Visibility
 ### Public
 
