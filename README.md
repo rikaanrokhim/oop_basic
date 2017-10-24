@@ -169,6 +169,60 @@ public function __destruct()
 }
 ```
 
+# Inheritance (Pewarisan)
+
+Inheritance atau Pewarisan/Penurunan adalah konsep pemrograman dimana sebuah class dapat __menurunkan__ property dan method yang dimilikinya kepada class lain. Class turunan ini, akan memiliki properti dan method yang sama seperti class pewarisnya, namun terdapat properti atau method tambahan khusus untuk class ini.
+
+```php
+class NamaKelasLama
+{
+    . . .
+}
+
+class NamaKelasBaru extends NamaKelasLama
+{
+    . . .
+}
+```
+
+Tidak semua property dan method dari class induk akan diturunkan. Property dan method dengan hak akses __private__ tidak akan diturunkan kepada class anak. Hanya property dan method dengan hak akses __protected dan public__ saja yang bisa diakses dari class anak.
+
+#### Contoh Penggunaan
+
+```php
+<?php
+class User
+{
+    public $username = 'Agnes';
+
+    function getUsername()
+    {
+        return $this->username . "<br>";
+    }
+}
+
+
+class Friends extends User
+{
+    public $name = 'Yuka';
+
+    function getName()
+    {
+        return $this->name . "<br>";
+    }
+}
+
+$profil = new Friends;
+
+echo "Username = " . $profil -> getUsername();
+echo "Temannya = " . $profil -> getName();
+```
+Hasilnya : <br>
+Username = Agnes <br>
+Temannya = Yuka
+
+Pada contoh diatas class `User` sebagai induknya dan class `Friends` sebagai turunaynnya, dimana `Friends` dapat mengakses isi dari `User` namun `User` tidak dapat mengakses isi dari `Friends`.
+
 # Scope Resolution Operator
 
 Scope Resolution Operator atau bisa juga disebut *Paamayim Nekudotayim* atau *double colon* dalam OOP pada PHP biasa digunakan untuk mengakses property dan method pada suatu class tanpa harus instansiasi class yang ingin digunakan. Operator ini membuat kita diijinkan untuk mengakses static, konstanta, properti dan method pada sebuah class.
