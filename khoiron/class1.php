@@ -31,7 +31,7 @@ class Lingkaran
 
     public function __destruct()
     {
-        echo "\nPenghitungan diakhiri";
+        echo "Penghitungan diakhiri\n";
     }
 
 }
