@@ -317,3 +317,43 @@ Username = Agnes <br>
 Temannya = Yuka
 
 Pada contoh diatas class `User` sebagai induknya dan class `Friends` sebagai turunaynnya, dimana `Friends` dapat mengakses isi dari `User` namun `User` tidak dapat mengakses isi dari `Friends`.
+
+# Static Keyword
+ 
+- Method atau property dapat dideklarasikan secara static.
+- Jika method atau property dideklarasikan secara static maka method atau property tersebut lamgsung dapat dikases tanpa harus membuat di-instance class.
+- Method atau property static adalah milik class bukan milik instance class.
+- Keyword `$this` tidak dapat digunakan untuk meng-akses method atau property static dalam class.
+- Gunakan keyword `self` untuk mengakses method atau property static.
+- Gunakan `self::method()` untuk mengakses method static dalam class.
+- Gunakan `name_class::method()` untuk mengkases method static dari luar class.
+
+* Contoh penggunaan :
+
+```php
+// Static property
+class Mobil {
+    static $staticProp = "Ini adalah property static";
+    static $staticProp1 = "Ini juga adalah contoh property static";
+}
+
+echo Mobil::$staticProp."<br />";
+echo Mobil::$staticProp1."<br />";
+
+// Static Method
+class Mobil1 {
+    const JUMLAH_RODA = "Mobil memiliki roda 4";
+   
+    static function cetak(){
+        echo self::JUMLAH_RODA;
+    }
+}
+
+class Turunan extends Mobil1 {
+    public function __construct(){
+        Mobil1::cetak();
+    }    
+}
+
+$a = new Turunan;
+```
