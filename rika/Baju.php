@@ -26,7 +26,7 @@ class Baju
     }
     public function showHarga()
     {
-        return self::harga . "<br>";
+        return self::HARGA . "<br>";
     }
 
 }
