@@ -114,6 +114,33 @@ echo $laptopBaru->beliKomputer(400);
 Constructor adalah fungsi khusus dalam sebuah class yang dipanggil saat sebuah object dibuat. Constructor tidak memiliki return value. Constructor biasa digunakan untuk mempersiapkan object seperti memberi nilai awal kepada atribute, memanggil member function dan beberapa proses lain.
 
 Pada PHP, constructor dibuat dengan menggunakan nama fungsi:  `__construct()`
+#### Sintax
+```php
+public function __construct() {
+    // Code yang akan dijalankan
+}
+```
+
+#### Contoh Penggunaan Constructor
+```php
+// membuat class motor
+class motor 
+{
+    public $merk = 'Honda';
+
+    public function __construct() 
+    {
+        echo "Code class " . __CLASS__ . " dijalankan!<br />";
+    }
+}
+
+$motorku = new motor;
+```
+
+###### hasil yang ditampilkan 
+```php
+Code class motor dijalankan!
+```
 
 ### Destructor
 
