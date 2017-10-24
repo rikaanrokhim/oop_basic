@@ -24,22 +24,22 @@ class Mobil
         echo " <br> Warna " . __CLASS__ . " kurang bagus ";
     }
     // method merek
-    public function get_merek()
+    public function getMerek()
     {
         // mengambil value dari $merek
         return $this->merek;
     }
-    public function get_jumlahRoda()
+    public function getJumlahRoda()
     {
         // mengambil value dari $jumlahRoda
         return $this->jumlahRoda;
     }
-    public function get_harga()
+    public function getHarga()
     {
         // mengambil value dari $harga
         return $this->harga;
     }
-    public function get_warna()
+    public function getWarna()
     {
         // mengambil value dari $warna
         return $this->warna;
@@ -54,7 +54,7 @@ $Mobil1 = new Mobil();
 
 // menampilkan property 
 
-echo   $Mobil1->get_merek() . "<br>";
-echo "Mobil Beroda" . $Mobil1->get_jumlahRoda() . "<br>";
-echo   "harga = Rp. " .$Mobil1->get_harga() . "<br>";
-echo  "Warna ". $Mobil1->get_warna();
+echo   $Mobil1->getMerek() . "<br>";
+echo "Mobil Beroda" . $Mobil1->getJumlahRoda() . "<br>";
+echo   "harga = Rp. " .$Mobil1->getHarga() . "<br>";
+echo  "Warna ". $Mobil1->getWarna();
