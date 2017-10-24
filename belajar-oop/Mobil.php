@@ -7,7 +7,7 @@ class Mobil
     */
     
     public $merek = " Inova"; 
-    public $jumlahRoda = " 4";
+    const JUMLAH_RODA = " 4";
     public $harga = " 17.000.000"; 
     public $warna = " Hitam "; 
     
@@ -32,7 +32,7 @@ class Mobil
     public function getJumlahRoda()
     {
         // mengambil value dari $jumlahRoda
-        return $this->jumlahRoda;
+        return  self::JUMLAH_RODA;
     }
     public function getHarga()
     {
@@ -52,7 +52,6 @@ $Mobil1 = new Mobil();
 
 //unset($Mobil1);
 
-// menampilkan property 
 
 echo   $Mobil1->getMerek() . "<br>";
 echo "Mobil Beroda" . $Mobil1->getJumlahRoda() . "<br>";
