@@ -110,7 +110,7 @@ class Laptop
     // buat method dengan konstanta class Laptop
     public function beliLaptop($harga)
     {
-      return "Beli Laptop Baru, Rp. " . $harga * self::DOLLAR;
+      return "Beli Laptop Baru, Rp .".$harga * self::DOLLAR;
     }
 }
   
@@ -169,82 +169,97 @@ public function __destruct()
 }
 ```
 
-# Inheritance (Pewarisan)
+# Operator Scope Resolution
 
-Inheritance atau Pewarisan/Penurunan adalah konsep pemrograman dimana sebuah class dapat __menurunkan__ property dan method yang dimilikinya kepada class lain. Class turunan ini, akan memiliki properti dan method yang sama seperti class pewarisnya, namun terdapat properti atau method tambahan khusus untuk class ini.
+Operator scope resolution (::) atau dalam bahasa indonesia berarti operator resolusi ruang lingkup adalah operator yang membuat kita diijinkan untuk mengakses static, konstanta, properti dan method pada sebuah class. Operator ini juga disebut dengan Paamayim Nekudotayim. Dengan operator (::) kita bisa mengakses secara langsung sesuatu tanpa instantisasi object. 
+Ketika kita mereference item ini dari luar definisi class menggunakan nama class. namun setelah PHP 5 mereferen class menggunakan variabel. Yang penting nilai variabel tidak boleh berupa keyword, seperti self, parent dan static.
 
-```php
-class NamaKelasLama
-{
-    . . .
-}
+Untuk lebih jelas perhatikan cara menggunakan operator :: berikut ini :
 
-class NamaKelasBaru extends NamaKelasLama
-{
-    . . .
-}
-```
-
-Tidak semua property dan method dari class induk akan diturunkan. Property dan method dengan hak akses __private__ tidak akan diturunkan kepada class anak. Hanya property dan method dengan hak akses __protected dan public__ saja yang bisa diakses dari class anak.
-
-#### Contoh Penggunaan
+**1. Menggunakan operator :: dari luar class**
 
 ```php
-<?php
-class User
+class Motor
 {
-    public $username = 'Agnes';
-
-    function getUsername()
-    {
-        return $this->username . "<br>";
-    }
+    const JUMLAH_RODA = '2';
 }
 
-
-class Friends extends User
-{
-    public $name = 'Yuka';
-
-    function getName()
-    {
-        return $this->name . "<br>";
-    }
-}
-
-$profil = new Friends;
-
-echo "Username = " . $profil -> getUsername();
-echo "Temannya = " . $profil -> getName();
+echo Motor::JUMLAH_RODA . "<br>";
+/*
+* menggunakan variabel dalam mereferensi class
+*/
+$classname = 'Motor';
+echo $classname::JUMLAH_RODA;
 ```
-Hasilnya : <br>
-Username = Agnes <br>
-Temannya = Yuka
+**2. Menggunakan Operator :: dari dalam class**
 
-Pada contoh diatas class `User` sebagai induknya dan class `Friends` sebagai turunaynnya, dimana `Friends` dapat mengakses isi dari `User` namun `User` tidak dapat mengakses isi dari `Friends`.
+Ada tiga keyword khusus yang bisa dipakai dalam menggunakan operator :: didalam class, yaitu : **static, parent dan self.**
+* Contoh penggunaan :
+```php 
+class Motor {  
+    const JUMLAH_RODA = ' 2';  
+ }  
 
-# Scope Resolution Operator
+/*
+* membuat class honda turunan dari Motor
+*/
+class Honda extends Motor  
+{  
+    public static $static = 'Motor Honda berroda 2';  
+    public static function doubleColon() 
+    {  
+        echo parent::JUMLAH_RODA . "<br/>";  
+        echo self::$static . "<br/>";  
+    }  
+}  
 
-Scope Resolution Operator atau bisa juga disebut *Paamayim Nekudotayim* atau *double colon* dalam OOP pada PHP biasa digunakan untuk mengakses property dan method pada suatu class tanpa harus instansiasi class yang ingin digunakan. Operator ini membuat kita diijinkan untuk mengakses static, konstanta, properti dan method pada sebuah class.
-- kode dibawah merupakan contoh penulusan Scope Resolution Operator didalam maupun diluar class
-```PHP
-class Lingkaran
-{
-    const PHI = 3.14;
-    
-    public function getPHI()
-    {
-        echo "Phi adalah " . self::PHI 
-    }
-}
+/*
+* memanggil method pada class tanpa instantisasi object  
+* dengan mereferen dari variabel  
+*/
+ $classname = 'Honda';  
+ echo $classname::doubleColon(); // As of PHP 5.3.0  
 
-class Tabung extends Lingkaran
-{   
-    public function getPHI()
-    {
-        echo "Phi adalah " . parent::PHI 
-    }
-}
-
-echo "Phi adalah " . Lingkaran::PHI 
+/*
+* memanggil method pada class tanpa instantisasi object  
+*/
+Honda::doubleColon();  
 ```
+
+**3. Memanggil Method pada Parent class (class induk)**
+
+Ketika class turunan menimpa method yang ada pada class induk (parent class) maka PHP tidak akan memanggil method pada class induk. Jadi bergantung pada class turunan mau menggunakan method pada class induk atau tidak. Cara ini juga dipakai pada Constructors,  Destructors, Overloading, dan definisi Magic method.
+
+* Contoh penggunaan :
+
+```php 
+class Motor  
+{  
+    protected function merek() 
+    {  
+        echo "Motor::merek()<br/>";  
+    }  
+}  
+
+class Honda extends Motor  
+{  
+    /*
+    *Membuat function yang menimpa function pada induk  
+    */
+    public function merek()  
+    {  
+        /*
+        * tapi masih bisa mengakses method dari class induk  
+        */
+        parent::merek();  
+
+        echo "Honda::merek()<br/>";  
+    }  
+}  
+
+$class = new Honda();  
+$class->merek();  
+```
+Pada contoh terdapat class induk Motor yang mempunyai method merek dengan perintah menampilkan `"Motor::merek()"` untuk menandai bahwa tampilan ni dihasilkan oleh method merek() pada class induk.
+
+Kemudian kita membuat class turunan bernama Honda dan membuat method bernama merek() juga, sama dengan method pada class induk. Kemudian pada method tersebut kita membuat dua perintah, yaitu `{ parent::merek(); }` untuk mengakses method merek() pada class induk dan `{ echo "Honda::merek()<br/>"; }` untuk menampilkan tulisan `"Honda::merek()"`
